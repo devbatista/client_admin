@@ -66,4 +66,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
+# Authentication
 gem 'devise'
+
+# CPF/CNPJ validation
+gem 'cpf_cnpj'
