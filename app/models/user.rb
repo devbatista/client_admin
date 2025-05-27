@@ -9,4 +9,14 @@ class User < ApplicationRecord
     attendant: 1,
     client: 2
   }
+
+  validate :validate_cpf
+
+  private
+
+    def validate_cpf
+      unless CPF.valid?(cpf)
+        error.add(:cpf, 'invalid CPF')
+      end
+    end
 end
