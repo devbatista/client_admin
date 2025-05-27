@@ -10,7 +10,15 @@ class User < ApplicationRecord
     client: 2
   }
 
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :cpf, presence: true, uniqueness: true
+  validates :encrypted_password, presence: true
+
   validate :validate_cpf
+
+  def visible_attribyes
+    %w[id email cpf role created_at updated_at]
+  end
 
   private
 
