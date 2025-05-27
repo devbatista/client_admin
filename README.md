@@ -28,6 +28,7 @@ enum role: { admin: 0, attendant: 1, client: 2 }
 ### 1. User
 - name  
 - email  
+- cpf
 - password_digest (ou Devise padrão)  
 - role (enum)  
 
