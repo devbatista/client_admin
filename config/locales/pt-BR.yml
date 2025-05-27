@@ -1,6 +1,12 @@
 ---
 pt-BR:
   devise:
+    passwords:
+      new:
+        example_email: joao@exemplo.com
+        instructions: Digite seu e-mail registrado para redefinir a senha
+        send: Enviar
+        title: Esqueceu sua senha?
     sessions:
       new:
         email: E-mail
@@ -11,4 +17,7 @@ pt-BR:
         password: Senha
         remember_me: Lembre de mim
         sign_in: Entrar
+    shared:
+      links:
+        back_to_login: Voltar para o login
   hello: Olá mundo

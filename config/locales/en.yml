@@ -1,6 +1,12 @@
 ---
 en:
   devise:
+    passwords:
+      new:
+        example_email: john@example.com
+        instructions: Enter your registered email to reset the password
+        send: Send
+        title: Forgot Password?
     sessions:
       new:
         email: E-mail
@@ -11,4 +17,7 @@ en:
         password: Password
         remember_me: Remember Me
         sign_in: Sign In
+    shared:
+      links:
+        back_to_login: Back to login
   hello: Hello world

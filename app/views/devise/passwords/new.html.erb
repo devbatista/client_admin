@@ -1,16 +1,57 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<!-- filepath: /Users/devbatista/devbatista/projetos/ruby/devbatista/admin/app/views/devise/passwords/new.html.erb -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="<%= asset_path('favicon-32x32.png') %>" type="image/png" />
+  <link href="<%= asset_path('css/pace.min.css') %>" rel="stylesheet" />
+  <script src="<%= asset_path('js/pace.min.js') %>"></script>
+  <link href="<%= asset_path('css/bootstrap.min.css') %>" rel="stylesheet">
+  <link href="<%= asset_path('css/bootstrap-extended.css') %>" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="<%= asset_path('css/app.css') %>" rel="stylesheet">
+  <link href="<%= asset_path('css/icons.css') %>" rel="stylesheet">
+  <title>DevBatista</title>
+</head>
+<body class="">
+  <div class="wrapper">
+    <div class="authentication-forgot d-flex align-items-center justify-content-center">
+      <div class="card forgot-box">
+        <div class="card-body">
+          <div class="p-3">
+            <div class="text-center">
+              <%= image_tag 'icons/forgot.png', width: 100, alt: "" %>
+            </div>
+            <h4 class="mt-5 font-weight-bold"><%= t('devise.passwords.new.title', 
+                                                    default: 'Forgot Password?') %></h4>
+            <p class="text-muted"><%= t('devise.passwords.new.instructions', 
+                                        default: 'Enter your registered email ID to reset the password') %></p>
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "my-4" }) do |f| %>
+              <div class="mb-3">
+                <%= f.label :email, 
+                            t('devise.passwords.new.email', default: 'Email'), 
+                            class: "form-label" %>
+                <%= f.email_field :email, 
+                                  autofocus: true, 
+                                  class: "form-control", placeholder: t('devise.passwords.new.example_email') %>
+              </div>
+              <div class="d-grid gap-2">
+                <%= f.submit t('devise.passwords.new.send', 
+                              default: 'Send'), 
+                              class: "btn btn-primary" %>
+                <%= link_to "#{content_tag(:i, '', 
+                              class: 'bx bx-arrow-back me-1')}
+                                #{t('devise.shared.links.back_to_login', default: 'Back to Login')}"
+                              .html_safe, 
+                              new_session_path(resource_name), 
+                              class: "btn btn-light" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
+</html>
