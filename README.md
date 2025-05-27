@@ -34,8 +34,7 @@ enum role: { admin: 0, attendant: 1, client: 2 }
 
 ### 2. Client
 - name (razão social)  
-- cnpj  
-- email  
+- cpf_cnpj
 - phone  
 - address  
 - user_id (relaciona com usuário cliente)  
