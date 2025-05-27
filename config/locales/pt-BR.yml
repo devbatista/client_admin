@@ -3,6 +3,9 @@ pt-BR:
   devise:
     sessions:
       new:
+        log_in: "Por favor, faça login na sua conta"
+        example_email: "joao@exemplo.com"
+        enter_password: "Digite a senha"
         sign_in: "Entrar"
         email: "E-mail"
         password: "Senha"

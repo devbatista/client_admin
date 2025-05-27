@@ -31,18 +31,27 @@
                   </div>
                   <div class="text-center mb-4">
                     <h5 class="">DevBatista</h5>
-                    <p class="mb-0">Please log in to your account</p>
+                    <p class="mb-0"><%= t('devise.sessions.new.log_in') %></p>
                   </div>
                   <div class="form-body">
-                    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "row g-3" }) do |f| %>
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {
+                                                                                                 class: "row g-3" 
+                                                                                                }) do |f| %>
                       <div class="col-12">
-                        <%= f.label :email, "Email", class: "form-label" %>
-                        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "john@example.com" %>
+                        <%= f.label :email, t('devise.sessions.new.email'), class: "form-label" %>
+                        <%= f.email_field :email, 
+                                          autofocus: true, 
+                                          autocomplete: "email", 
+                                          class: "form-control", 
+                                          placeholder: t('devise.sessions.new.example_email') %>
                       </div>
                       <div class="col-12">
-                        <%= f.label :password, "Password", class: "form-label" %>
+                        <%= f.label :password, t('devise.sessions.new.password'), class: "form-label" %>
                         <div class="input-group" id="show_hide_password">
-                          <%= f.password_field :password, autocomplete: "current-password", class: "form-control border-end-0", placeholder: "Enter Password" %>
+                          <%= f.password_field :password, 
+                                                autocomplete: "current-password", 
+                                                class: "form-control border-end-0", 
+                                                placeholder: t('devise.sessions.new.enter_password') %>
                           <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
                         </div>
                       </div>
