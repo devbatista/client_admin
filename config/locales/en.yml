@@ -6,7 +6,9 @@ en:
         email: E-mail
         enter_password: Enter Password
         example_email: john@example.com
+        forgot_password: Forgot Password?
         log_in: Please log in to your account
         password: Password
+        remember_me: Remember Me
         sign_in: Sign In
   hello: Hello world

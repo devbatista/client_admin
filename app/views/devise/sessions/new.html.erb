@@ -1,6 +1,7 @@
 <!-- filepath: /Users/devbatista/devbatista/projetos/ruby/devbatista/admin/app/views/devise/sessions/new.html.erb -->
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,11 +14,13 @@
   <link href="<%= asset_path('css/bootstrap.min.css') %>" rel="stylesheet">
   <link href="<%= asset_path('css/bootstrap-extended.css') %>" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link href="<%= asset_path('css/app.css') %>" rel="stylesheet">
   <link href="<%= asset_path('css/icons.css') %>" rel="stylesheet">
   <title>Rocker - Bootstrap 5 Admin Dashboard Template</title>
 </head>
-<body>
+
+<body class="">
   <div class="wrapper">
     <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
       <div class="container">
@@ -27,53 +30,35 @@
               <div class="card-body">
                 <div class="p-4">
                   <div class="mb-3 text-center">
-                    <%= image_tag 'logo-icon.png', width: 60, alt: "" %>
+                    <%= image_tag 'logo-icon.png', width: 100, alt: "" %>
                   </div>
                   <div class="text-center mb-4">
-                    <h5 class="">DevBatista</h5>
-                    <p class="mb-0"><%= t('devise.sessions.new.log_in') %></p>
+                    <p class="mb-0"><%= t('devise.sessions.new.log_in', default: 'Please log in to your account') %></p>
                   </div>
                   <div class="form-body">
-                    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {
-                                                                                                 class: "row g-3" 
-                                                                                                }) do |f| %>
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "row g-3" }) do |f| %>
                       <div class="col-12">
-                        <%= f.label :email, t('devise.sessions.new.email'), class: "form-label" %>
-                        <%= f.email_field :email, 
-                                          autofocus: true, 
-                                          autocomplete: "email", 
-                                          class: "form-control", 
-                                          placeholder: t('devise.sessions.new.example_email') %>
+                        <%= f.label :email, t('devise.sessions.new.email', default: 'Email'), class: "form-label" %>
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: t('devise.sessions.new.example_email', default: 'john@example.com') %>
                       </div>
-                      <div class="col-12">
-                        <%= f.label :password, t('devise.sessions.new.password'), class: "form-label" %>
-                        <div class="input-group" id="show_hide_password">
-                          <%= f.password_field :password, 
-                                                autocomplete: "current-password", 
-                                                class: "form-control border-end-0", 
-                                                placeholder: t('devise.sessions.new.enter_password') %>
-                          <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
-                        </div>
+                      <div class="col-12 position-relative">
+                        <%= f.label :password, t('devise.sessions.new.password', default: 'Password'), class: "form-label" %>
+                        <%= f.password_field :password, autocomplete: "current-password", class: "form-control password-field", placeholder: t('devise.sessions.new.enter_password', default: 'Enter Password') %>
                       </div>
                       <% if devise_mapping.rememberable? %>
                         <div class="col-md-6">
                           <div class="form-check form-switch">
                             <%= f.check_box :remember_me, class: "form-check-input", id: "flexSwitchCheckChecked" %>
-                            <%= f.label :remember_me, "Remember Me", class: "form-check-label", for: "flexSwitchCheckChecked" %>
+                            <%= f.label :remember_me, t('devise.sessions.new.remember_me', default: "Remember Me"), class: "form-check-label", for: "flexSwitchCheckChecked" %>
                           </div>
                         </div>
                       <% end %>
                       <div class="col-md-6 text-end">
-                        <%= link_to "Forgot Password ?", new_password_path(resource_name) %>
+                        <%= link_to t('devise.sessions.new.forgot_password', default: "Forgot Password ?"), new_password_path(resource_name) %>
                       </div>
                       <div class="col-12">
                         <div class="d-grid">
-                          <%= f.submit "Sign in", class: "btn btn-primary" %>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="text-center ">
-                          <p class="mb-0">Don't have an account yet? <%= link_to "Sign up here", new_registration_path(resource_name) %></p>
+                          <%= f.submit t('devise.sessions.new.sign_in', default: "Sign in"), class: "btn btn-primary" %>
                         </div>
                       </div>
                     <% end %>
@@ -87,23 +72,26 @@
       </div>
     </div>
   </div>
+  <!--end wrapper-->
   <script src="<%= asset_path('js/bootstrap.bundle.min.js') %>"></script>
   <script src="<%= asset_path('js/jquery.min.js') %>"></script>
   <script src="<%= asset_path('plugins/simplebar/js/simplebar.min.js') %>"></script>
   <script src="<%= asset_path('plugins/metismenu/js/metisMenu.min.js') %>"></script>
   <script src="<%= asset_path('plugins/perfect-scrollbar/js/perfect-scrollbar.js') %>"></script>
   <script>
-    $(document).ready(function () {
-      $("#show_hide_password a").on('click', function (event) {
-        event.preventDefault();
-        if ($('#show_hide_password input').attr("type") == "text") {
-          $('#show_hide_password input').attr('type', 'password');
-          $('#show_hide_password i').addClass("bx-hide");
-          $('#show_hide_password i').removeClass("bx-show");
-        } else if ($('#show_hide_password input').attr("type") == "password") {
-          $('#show_hide_password input').attr('type', 'text');
-          $('#show_hide_password i').removeClass("bx-hide");
-          $('#show_hide_password i').addClass("bx-show");
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector('.password-toggle');
+      const input = document.querySelector('.password-field');
+      const icon = toggle.querySelector('i');
+      toggle.addEventListener('click', function () {
+        if (input.type === "password") {
+          input.type = "text";
+          icon.classList.remove("bx-hide");
+          icon.classList.add("bx-show");
+        } else {
+          input.type = "password";
+          icon.classList.remove("bx-show");
+          icon.classList.add("bx-hide");
         }
       });
     });

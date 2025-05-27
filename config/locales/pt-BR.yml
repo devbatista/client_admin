@@ -6,7 +6,9 @@ pt-BR:
         email: E-mail
         enter_password: Digite a senha
         example_email: joao@exemplo.com
+        forgot_password: Esqueceu sua senha?
         log_in: Por favor, faça login na sua conta
         password: Senha
+        remember_me: Lembre de mim
         sign_in: Entrar
   hello: Olá mundo
