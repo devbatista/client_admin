@@ -1,6 +1,8 @@
 class Estimate < ApplicationRecord
   belongs_to :client
 
+  has_many :attachments, as: :attachable, dependent: :destroy
+
   enum status: {
     pending: 0,
     approved: 1,
