@@ -5,5 +5,5 @@ class Attachment < ApplicationRecord
   has_one_attached :file
 
   validates :file, presence: true
-  validates :type, presence: true
+  validates :attachment_type, presence: true
 end
