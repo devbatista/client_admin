@@ -1,11 +1,12 @@
+---
 en:
-  hello: "Hello world"
   devise:
     sessions:
       new:
-        log_in: "Please log in to your account"
-        example_email: "john@example.com"
-        enter_password: "Enter Password"
-        sign_in: "Sign In"
-        email: "E-mail"
-        password: "Password"
+        email: E-mail
+        enter_password: Enter Password
+        example_email: john@example.com
+        log_in: Please log in to your account
+        password: Password
+        sign_in: Sign In
+  hello: Hello world
