@@ -16,15 +16,11 @@ class User < ApplicationRecord
 
   validate :validate_cpf
 
-  def visible_attribyes
-    %w[id email cpf role created_at updated_at]
-  end
-
   private
 
     def validate_cpf
       unless CPF.valid?(cpf)
-        error.add(:cpf, 'invalid CPF')
+        errors.add(:cpf, 'invalid CPF')
       end
     end
 end
