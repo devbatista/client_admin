@@ -27,5 +27,7 @@ module Admin
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
     end
+
+    config.i18n.default_locale = :'pt-BR'
   end
 end
