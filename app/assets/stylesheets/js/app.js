@@ -12,9 +12,6 @@ $(function() {
 		$(".mobile-toggle-menu").on("click", function() {
 			$(".wrapper").addClass("toggled")
 		}),
-		
-
-
 
 		$(".dark-mode").on("click", function() {
 
@@ -27,8 +24,7 @@ $(function() {
 			}
 
 		}), 
-
-		
+	
 		$(".toggle-icon").click(function() {
 			$(".wrapper").hasClass("toggled") ? ($(".wrapper").removeClass("toggled"), $(".sidebar-wrapper").unbind("hover")) : ($(".wrapper").addClass("toggled"), $(".sidebar-wrapper").hover(function() {
 				$(".wrapper").addClass("sidebar-hovered")
