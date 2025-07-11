@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     root "dashboard#index"
   end
 
-  root "index#index"
+  root "site#index"
+  get "about", to: "site#about"
+  get "services", to: "site#services"
+  get "projects", to: "site#projects"
+  get "contact", to: "site#contact"
 end
