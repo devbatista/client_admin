@@ -3,7 +3,7 @@
     <div class="footer-grid">
       <!-- Brand -->
       <div class="footer-brand">
-        <a href="index.html" class="footer-logo">DevBatista</a>
+        <%= link_to "DevBatista", root_path, class: "footer-logo" %>
         <p class="footer-description">
           Empresa especializada em soluções digitais inovadoras. Transformamos ideias em tecnologia de ponta para
           impulsionar o crescimento do seu negócio.
@@ -21,14 +21,14 @@
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a href="https://instagram.com/devbatista" target="_blank" rel="noopener noreferrer" class="social-link instagram">
+          <a href="https://instagram.com/_devbatista" target="_blank" rel="noopener noreferrer" class="social-link instagram">
             <svg class="icon icon-sm" viewBox="0 0 24 24">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
-          <a href="mailto:contato@devbatista.com.br" class="social-link email">
+          <a href="mailto:rafael@devbatista.com" class="social-link email">
             <svg class="icon icon-sm" viewBox="0 0 24 24">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
@@ -41,10 +41,10 @@
       <div class="footer-section">
         <h3>Empresa</h3>
         <ul class="footer-links">
-          <li><a href="index.html" class="footer-link">Início</a></li>
-          <li><a href="sobre.html" class="footer-link">Sobre Nós</a></li>
-          <li><a href="servicos.html" class="footer-link">Serviços</a></li>
-          <li><a href="projetos.html" class="footer-link">Portfólio</a></li>
+          <li><%= link_to "Início", root_path, class: "footer-link" %></li>
+          <li><%= link_to "Sobre Nós", about_path, class: "footer-link" %></li>
+          <li><%= link_to "Serviços", services_path, class: "footer-link" %></li>
+          <li><%= link_to "Portfólio", projects_path, class: "footer-link" %></li>
         </ul>
       </div>
 
@@ -67,7 +67,7 @@
           <path d="M5 21V7l8-4v18"></path>
           <path d="M19 21V11l-6-4"></path>
         </svg>
-        © 2024 DevBatista. Todos os direitos reservados.
+        © <%= Time.current.year %> DevBatista. Todos os direitos reservados.
       </p>
       <p class="footer-made-with">
         Desenvolvido com
