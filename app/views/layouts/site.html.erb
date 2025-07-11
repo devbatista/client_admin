@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevBatista - Soluções Digitais Inovadoras</title>
+  <meta name="description" content="Empresa especializada em desenvolvimento web, aplicações mobile e sistemas corporativos. Transformamos ideias em soluções digitais de alta performance.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <%= stylesheet_link_tag 'site/css/global', 'site/css/navigation', 'site/css/footer', 'site/css/home', media: 'all' %>
+</head>
+<body>
+  <!-- Navigation -->
+  <%= render 'layouts/partials/site/navbar' %>
+
+  <!-- Main Content -->
+  <%= yield %>
+
+  <!-- Footer -->
+  <%= render 'layouts/partials/site/footer' %>
+
+  <!-- JavaScript -->
+  <%= javascript_include_tag 'site/js/main' %>
+</body>
+</html>
