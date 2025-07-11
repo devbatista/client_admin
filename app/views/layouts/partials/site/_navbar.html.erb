@@ -2,15 +2,15 @@
   <div class="nav-container">
     <div class="nav-content">
       <!-- Logo -->
-      <a href="index.html" class="nav-logo">DevBatista</a>
+      <%= link_to "DevBatista", root_path, class: "nav-logo" %>
 
       <!-- Desktop Navigation -->
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Início</a></li>
-        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
-        <li><a href="servicos.html" class="nav-link">Serviços</a></li>
-        <li><a href="projetos.html" class="nav-link">Projetos</a></li>
-        <li><a href="contato.html" class="nav-link">Contato</a></li>
+        <li><%= link_to "Início", root_path, class: "nav-link" %></li>
+        <li><%= link_to "Sobre", about_path, class: "nav-link" %></li>
+        <li><%= link_to "Serviços", services_path, class: "nav-link" %></li>
+        <li><%= link_to "Projetos", projects_path, class: "nav-link" %></li>
+        <li><%= link_to "Contato", contact_path, class: "nav-link" %></li>
       </ul>
 
       <!-- Mobile Menu Button -->
@@ -26,11 +26,11 @@
     <!-- Mobile Navigation -->
     <div class="mobile-menu">
       <ul class="mobile-nav-links">
-        <li><a href="index.html" class="mobile-nav-link">Início</a></li>
-        <li><a href="sobre.html" class="mobile-nav-link">Sobre</a></li>
-        <li><a href="servicos.html" class="mobile-nav-link">Serviços</a></li>
-        <li><a href="projetos.html" class="mobile-nav-link">Projetos</a></li>
-        <li><a href="contato.html" class="mobile-nav-link">Contato</a></li>
+        <li><%= link_to "Início", root_path, class: "mobile-nav-link" %></li>
+        <li><%= link_to "Sobre", about_path, class: "mobile-nav-link" %></li>
+        <li><%= link_to "Serviços", services_path, class: "mobile-nav-link" %></li>
+        <li><%= link_to "Projetos", projects_path, class: "mobile-nav-link" %></li>
+        <li><%= link_to "Contato", contact_path, class: "mobile-nav-link" %></li>
       </ul>
     </div>
   </div>
